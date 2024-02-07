@@ -1,6 +1,6 @@
 //Given a function fn, return a memoized version of that function.
 //
-// A memoized function is a function that will never be called twice with the same inputs. Instead it will return a cached value.
+// A memoized function is a function that will never be called twice with the same inputs. Instead, it will return a cached value.
 //
 // You can assume there are 3 possible input functions: sum, fib, and factorial.
 //
@@ -38,9 +38,9 @@
 // const memoFactorial = memoize(factorial);
 // memoFactorial(2); // "call" - returns 2.
 // memoFactorial(3); // "call" - returns 6.
-// memoFactorial(2); // "call" - returns 2. However factorial was not called because 2 was seen before.
+// memoFactorial(2); // "call" - returns 2. However, factorial was not called because 2 was seen before.
 // // "getCallCount" - total call count: 2
-// memoFactorial(3); // "call" - returns 6. However factorial was not called because 3 was seen before.
+// memoFactorial(3); // "call" - returns 6. However, factorial was not called because 3 was seen before.
 // // "getCallCount" - total call count: 2
 //
 // Example 3:
@@ -65,6 +65,7 @@
 //     actions[i] is one of "call" and "getCallCount"
 //     fnName is one of "sum", "factorial" and "fib
 
+// короче делаем  кеширование
 /**
  * @param {Function} fn
  * @return {Function}
@@ -74,7 +75,7 @@ function memoize(fn) {
     return function(...args) {
         const argsString = args.join(".");
         const cacheValue = answer[argsString]
-        if(cacheValue != undefined) {
+        if(cacheValue !== undefined) {
             return cacheValue;
         }
         return answer[argsString] = fn(...args);
