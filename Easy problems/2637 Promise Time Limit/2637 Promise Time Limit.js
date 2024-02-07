@@ -69,7 +69,6 @@
 // Explanation:
 // The function immediately throws an error.
 
-
 /**
  * @param {Function} fn
  * @param {number} t
